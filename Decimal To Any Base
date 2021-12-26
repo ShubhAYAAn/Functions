@@ -1,0 +1,42 @@
+I/P- 57
+O/P- 111001
+
+import java.util.*;
+  
+  public class Main{
+  
+  public static void main(String[] args) {
+      Scanner scn = new Scanner(System.in);
+      int n = scn.nextInt();
+      int b = scn.nextInt();
+      int dn = getValueInBase(n, b);
+      System.out.println(dn);
+   }
+  
+   public static int getValueInBase(int n, int b){
+     
+        int p=0; int s=0;
+        while (n != 0) {
+            int rem = n % 2;
+            n /= 2;
+            s= s+ rem * (int)Math.pow(10, p);
+            p++;
+        
+    }
+    return s;
+                       
+                       OR
+    
+     int ans = 0, pow = 1;
+        while (n != 0) {
+            int rem = n % 2;
+            n /= 2;
+
+            ans += rem * pow;
+            pow = pow * 10;
+        }
+
+        return ans;
+       
+    }
+  } 
